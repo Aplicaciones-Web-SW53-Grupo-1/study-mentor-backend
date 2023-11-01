@@ -1,3 +1,8 @@
+using _2._Domain;
+using _3._Data;
+using _3._Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,8 +11,34 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Inyeccion dependencias
+builder.Services.AddScoped<IPaymentData, PaymentMySqlData>();
+builder.Services.AddScoped<IPaymentDomain, PaymentDomain>();
+
+//Pomelo MySql Connection
+var connectionString = builder.Configuration.GetConnectionString("StudyMentorDB");
+builder.Services.AddDbContext<StudyMentorDB>(
+    dbContextOptions =>
+    {
+        dbContextOptions.UseMySql(connectionString,
+            ServerVersion.AutoDetect(connectionString),
+            options => options.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: System.TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null)
+        );
+    });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+using (var context = scope.ServiceProvider.GetService<StudyMentorDB>())
+{
+    context.Database.EnsureCreated();
+}
+{
+    
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
