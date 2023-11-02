@@ -13,5 +13,7 @@ public class ModelToAPI: Profile
         CreateMap<Payment, PaymentResponse>();
         CreateMap<Student, StudentRequest>();
         CreateMap<Student, StudentResponse>();
+        CreateMap<Tutor, TutorRequest>();
+        CreateMap<Tutor, TutorResponse>();
     }
 }

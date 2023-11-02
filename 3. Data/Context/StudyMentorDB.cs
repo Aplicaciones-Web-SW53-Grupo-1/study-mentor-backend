@@ -13,7 +13,7 @@ public class StudyMentorDB : DbContext
     public StudyMentorDB(DbContextOptions<StudyMentorDB> options) : base(options){}
     
     public DbSet<Payment> Payments { get; set; }
-
+    public DbSet<Tutor> Tutors { get; set; }
     public DbSet<Student> Students { get; set; }
     // db set reviews
 
@@ -60,5 +60,16 @@ public class StudyMentorDB : DbContext
         builder.Entity<Student>().Property(q => q.Cellphone).IsRequired().HasMaxLength(9);
         builder.Entity<Student>().Property(q => q.Image).IsRequired().HasMaxLength(248);
         
+        //Tutors
+        builder.Entity<Tutor>().ToTable("Tutor");
+        builder.Entity<Tutor>().HasKey(p => p.Id);
+        builder.Entity<Tutor>().Property(c => c.Name).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Lastname).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Email).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Password).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Cellphone).IsRequired().HasMaxLength(9);
+        builder.Entity<Tutor>().Property(q => q.Specialty).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Cost).IsRequired();
+        builder.Entity<Tutor>().Property(q => q.Image).IsRequired().HasMaxLength(248);
     }
 }
