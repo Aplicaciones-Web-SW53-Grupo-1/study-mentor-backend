@@ -5,11 +5,11 @@ using AutoMapper;
 
 namespace _1._API.Mapper;
 
-public class ModelToAPI : Profile
+public class ModelToAPI: Profile
 {
     public ModelToAPI()
     {
-        CreateMap<Student, StudentRequest>();
-        CreateMap<Student, StudentResponse>();
+        CreateMap<Payment, PaymentRequest>();
+        CreateMap<Payment, PaymentResponse>();
     }
 }

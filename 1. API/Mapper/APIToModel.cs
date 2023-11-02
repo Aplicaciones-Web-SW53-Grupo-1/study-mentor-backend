@@ -4,10 +4,10 @@ using AutoMapper;
 
 namespace _1._API.Mapper;
 
-public class APIToModel : Profile
+public class APIToModel: Profile
 {
     public APIToModel()
     {
-        CreateMap<StudentRequest, Student>();
+        CreateMap<PaymentRequest, Payment>();
     }
 }
