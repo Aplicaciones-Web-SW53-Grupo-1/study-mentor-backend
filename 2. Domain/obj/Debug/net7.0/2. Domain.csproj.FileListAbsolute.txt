@@ -28,3 +28,18 @@ E:\Proyectos Backend\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.d
 E:\Proyectos Backend\study-mentor-backend\2. Domain\obj\Debug\net7.0\refint\2. Domain.dll
 E:\Proyectos Backend\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.pdb
 E:\Proyectos Backend\study-mentor-backend\2. Domain\obj\Debug\net7.0\ref\2. Domain.dll
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\bin\Debug\net7.0\2. Domain.deps.json
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\bin\Debug\net7.0\2. Domain.dll
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\bin\Debug\net7.0\2. Domain.pdb
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\bin\Debug\net7.0\3. Data.dll
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\bin\Debug\net7.0\3. Data.pdb
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.AssemblyInfo.cs
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.csproj.CopyComplete
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.dll
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\refint\2. Domain.dll
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\2. Domain.pdb
+C:\Users\Asus\Desktop\weba\study-mentor-backend\2. Domain\obj\Debug\net7.0\ref\2. Domain.dll
