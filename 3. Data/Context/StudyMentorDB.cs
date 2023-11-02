@@ -13,14 +13,16 @@ public class StudyMentorDB : DbContext
     public StudyMentorDB(DbContextOptions<StudyMentorDB> options) : base(options){}
     
     public DbSet<Payment> Payments { get; set; }
-    public DbSet<Review> Reviews { get; set; }
+    public DbSet<Tutor> Tutors { get; set; }
+    public DbSet<Student> Students { get; set; }
+    // db set reviews
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=1234;Database=StudyMentorDB;", serverVersion);
+            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=admin;Database=StudyMentorDB;", serverVersion);
         }
     }
 
@@ -40,12 +42,34 @@ public class StudyMentorDB : DbContext
         builder.Entity<Payment>().Property(p => p.IsActive).HasDefaultValue(true);
         
         //REVIEWS
-        builder.Entity<Review>().ToTable("Review");
-        builder.Entity<Review>().HasKey(p => p.Id);
-        builder.Entity<Review>().Property(p => p.review).IsRequired().HasPrecision(200);
-        builder.Entity<Review>().Property(p => p.Rating).IsRequired().HasPrecision(5);
-        builder.Entity<Review>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
-        builder.Entity<Review>().Property(p => p.IsActive).HasDefaultValue(true);
-
+        
+        
+        //Students
+        builder.Entity<Student>().ToTable("Student");
+        builder.Entity<Student>().HasKey(p => p.Id);
+        builder.Entity<Student>().Property(c => c.Name).IsRequired().HasMaxLength(45);
+        builder.Entity<Student>().Property(q => q.Lastname).IsRequired().HasMaxLength(45);
+        builder.Entity<Student>().Property(q => q.Email).IsRequired().HasMaxLength(45);
+        builder.Entity<Student>().Property(q => q.Password).IsRequired().HasMaxLength(45);
+        builder.Entity<Student>().OwnsOne(q => q.Genre, genre =>
+        {
+            genre.Property(g => g.NameGenre).IsRequired().HasMaxLength(10);
+            genre.Property(g => g.Code).IsRequired().HasMaxLength(1);
+        });
+        builder.Entity<Student>().Property(q => q.Birthday).IsRequired().HasColumnType("date");
+        builder.Entity<Student>().Property(q => q.Cellphone).IsRequired().HasMaxLength(9);
+        builder.Entity<Student>().Property(q => q.Image).IsRequired().HasMaxLength(248);
+        
+        //Tutors
+        builder.Entity<Tutor>().ToTable("Tutor");
+        builder.Entity<Tutor>().HasKey(p => p.Id);
+        builder.Entity<Tutor>().Property(c => c.Name).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Lastname).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Email).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Password).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Cellphone).IsRequired().HasMaxLength(9);
+        builder.Entity<Tutor>().Property(q => q.Specialty).IsRequired().HasMaxLength(45);
+        builder.Entity<Tutor>().Property(q => q.Cost).IsRequired();
+        builder.Entity<Tutor>().Property(q => q.Image).IsRequired().HasMaxLength(248);
     }
 }

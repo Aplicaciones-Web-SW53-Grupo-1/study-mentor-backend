@@ -16,8 +16,10 @@ builder.Services.AddSwaggerGen();
 //Inyeccion dependencias
 builder.Services.AddScoped<IPaymentData, PaymentMySqlData>();
 builder.Services.AddScoped<IPaymentDomain, PaymentDomain>();
-builder.Services.AddScoped<IReviewData, ReviewMySqlData>();
-builder.Services.AddScoped<IReviewDomain, ReviewDomain>();
+builder.Services.AddScoped<IStudentData, StudentSQLData>();
+builder.Services.AddScoped<IStudentDomain, StudentDomain>();
+builder.Services.AddScoped<ITutorData, TutorSQLData>();
+builder.Services.AddScoped<ITutorDomain, TutorDomain>();
 
 //Pomelo MySql Connection
 var connectionString = builder.Configuration.GetConnectionString("StudyMentorDB");

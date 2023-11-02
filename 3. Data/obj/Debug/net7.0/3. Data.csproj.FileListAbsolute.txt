@@ -10,15 +10,15 @@ C:\Users\ramos\RiderProjects\study-mentor\3. Data\obj\Debug\net7.0\3. Data.dll
 C:\Users\ramos\RiderProjects\study-mentor\3. Data\obj\Debug\net7.0\refint\3. Data.dll
 C:\Users\ramos\RiderProjects\study-mentor\3. Data\obj\Debug\net7.0\3. Data.pdb
 C:\Users\ramos\RiderProjects\study-mentor\3. Data\obj\Debug\net7.0\ref\3. Data.dll
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.deps.json
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.dll
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.pdb
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.AssemblyReference.cache
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfoInputs.cache
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfo.cs
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.CoreCompileInputs.cache
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.dll
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\refint\3. Data.dll
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
-C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll
+E:\Proyectos Backend\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.deps.json
+E:\Proyectos Backend\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.dll
+E:\Proyectos Backend\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.pdb
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.AssemblyReference.cache
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfoInputs.cache
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfo.cs
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.CoreCompileInputs.cache
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.dll
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\refint\3. Data.dll
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
+E:\Proyectos Backend\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll

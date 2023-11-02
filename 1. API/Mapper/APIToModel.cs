@@ -9,6 +9,8 @@ public class APIToModel: Profile
     public APIToModel()
     {
         CreateMap<PaymentRequest, Payment>();
-        CreateMap<ReviewRequest, Review>();
+        CreateMap<StudentRequest, Student>();
+        CreateMap<TutorRequest, Tutor>();
+
     }
 }

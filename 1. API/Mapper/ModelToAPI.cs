@@ -11,7 +11,9 @@ public class ModelToAPI: Profile
     {
         CreateMap<Payment, PaymentRequest>();
         CreateMap<Payment, PaymentResponse>();
-        CreateMap<Review, ReviewResponse>();
-        CreateMap<Review, ReviewRequest>();
+        CreateMap<Student, StudentRequest>();
+        CreateMap<Student, StudentResponse>();
+        CreateMap<Tutor, TutorRequest>();
+        CreateMap<Tutor, TutorResponse>();
     }
 }
