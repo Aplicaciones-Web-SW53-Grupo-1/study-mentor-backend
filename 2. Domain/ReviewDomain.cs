@@ -1,3 +1,4 @@
+using _3._Data;
 using _3._Data.Model;
 
 namespace _2._Domain;
@@ -13,6 +14,8 @@ public class ReviewDomain: IReviewDomain
     
     public bool Create(Review review)
     {
-        throw new NotImplementedException();
+        var rating = _reviewData.GetByRating(review.Rating);
+        if (rating == null) return _reviewData.Create(review);
+        return false;
     }
 }

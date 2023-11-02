@@ -20,7 +20,7 @@ public class StudyMentorDB : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=root;Database=StudyMentorDB;", serverVersion);
+            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=1234;Database=StudyMentorDB;", serverVersion);
         }
     }
 
@@ -40,7 +40,12 @@ public class StudyMentorDB : DbContext
         builder.Entity<Payment>().Property(p => p.IsActive).HasDefaultValue(true);
         
         //REVIEWS
-        
-        
+        builder.Entity<Review>().ToTable("Review");
+        builder.Entity<Review>().HasKey(p => p.Id);
+        builder.Entity<Review>().Property(p => p.review).IsRequired().HasPrecision(200);
+        builder.Entity<Review>().Property(p => p.Rating).IsRequired().HasPrecision(5);
+        builder.Entity<Review>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
+        builder.Entity<Review>().Property(p => p.IsActive).HasDefaultValue(true);
+
     }
 }
