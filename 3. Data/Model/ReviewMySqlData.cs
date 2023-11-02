@@ -6,7 +6,7 @@ public class ReviewMySqlData: IReviewData
 {
     private StudyMentorDB _studyMentorDb;
 
-    private ReviewMySqlData(StudyMentorDB studyMentorDb)
+    public ReviewMySqlData(StudyMentorDB studyMentorDb)
     {
         _studyMentorDb = studyMentorDb;
     }
