@@ -34,3 +34,15 @@ C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data
 C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\refint\3. Data.dll
 C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
 C:\Users\Asus\Desktop\weba\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.deps.json
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.dll
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.pdb
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.AssemblyReference.cache
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfoInputs.cache
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfo.cs
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.CoreCompileInputs.cache
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.dll
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\refint\3. Data.dll
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
+C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll

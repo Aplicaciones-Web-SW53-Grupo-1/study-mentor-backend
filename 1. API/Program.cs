@@ -20,6 +20,8 @@ builder.Services.AddScoped<IStudentData, StudentSQLData>();
 builder.Services.AddScoped<IStudentDomain, StudentDomain>();
 builder.Services.AddScoped<ITutorData, TutorSQLData>();
 builder.Services.AddScoped<ITutorDomain, TutorDomain>();
+builder.Services.AddScoped<IScoreData, ScoreMySqlData>();
+builder.Services.AddScoped<IScoreDomain, ScoreDomain>();
 
 //Pomelo MySql Connection
 var connectionString = builder.Configuration.GetConnectionString("StudyMentorDB");

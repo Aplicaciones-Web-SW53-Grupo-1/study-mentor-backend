@@ -17,6 +17,7 @@ public class StudyMentorDB : DbContext
     public DbSet<Student> Students { get; set; }
     
     public DbSet<Review> Reviews { get; set; }
+    public DbSet<Score> Scores { get; set; }
     // db set reviews
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -78,5 +79,18 @@ public class StudyMentorDB : DbContext
         builder.Entity<Tutor>().Property(q => q.Specialty).IsRequired().HasMaxLength(45);
         builder.Entity<Tutor>().Property(q => q.Cost).IsRequired();
         builder.Entity<Tutor>().Property(q => q.Image).IsRequired().HasMaxLength(248);
+        //Score
+        // nombrar tablas
+        builder.Entity<Score>().ToTable("Score");
+        // has key definir llave primaria
+        builder.Entity<Score>().HasKey(p => p.Id);
+        // definir campos requeridos
+        builder.Entity<Score>().Property(p => p.Type).IsRequired();
+        builder.Entity<Score>().Property(p => p.Date).IsRequired();
+        builder.Entity<Score>().Property(p => p.Result).IsRequired();
+        builder.Entity<Score>().Property(p => p.Status).IsRequired();
+        // obligatorio
+        builder.Entity<Score>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
+        builder.Entity<Score>().Property(p => p.IsActive).HasDefaultValue(true);
     }
 }
