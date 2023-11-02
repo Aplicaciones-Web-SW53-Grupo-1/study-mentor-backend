@@ -826,19 +826,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ramos\\.nuget\\packages\\": {}
+    "C:\\Users\\Jonatan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\2. Domain\\2. Domain.csproj",
+      "projectUniqueName": "E:\\Proyectos Backend\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
       "projectName": "2. Domain",
-      "projectPath": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\2. Domain\\2. Domain.csproj",
-      "packagesPath": "C:\\Users\\ramos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\2. Domain\\obj\\",
+      "projectPath": "E:\\Proyectos Backend\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
+      "packagesPath": "C:\\Users\\Jonatan\\.nuget\\packages\\",
+      "outputPath": "E:\\Proyectos Backend\\study-mentor-backend\\2. Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ramos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Jonatan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -850,8 +850,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\ramos\\RiderProjects\\study-mentor\\3. Data\\3. Data.csproj": {
-              "projectPath": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\3. Data\\3. Data.csproj"
+            "E:\\Proyectos Backend\\study-mentor-backend\\3. Data\\3. Data.csproj": {
+              "projectPath": "E:\\Proyectos Backend\\study-mentor-backend\\3. Data\\3. Data.csproj"
             }
           }
         }
@@ -881,7 +881,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
