@@ -2,6 +2,7 @@ using _1._API.Mapper;
 using _2._Domain;
 using _3._Data;
 using _3._Data.Context;
+using _3._Data.Model;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddSwaggerGen();
 //Inyeccion dependencias
 builder.Services.AddScoped<IPaymentData, PaymentMySqlData>();
 builder.Services.AddScoped<IPaymentDomain, PaymentDomain>();
+builder.Services.AddScoped<IReviewData, ReviewMySqlData>();
+builder.Services.AddScoped<IReviewDomain, ReviewDomain>();
 
 //Pomelo MySql Connection
 var connectionString = builder.Configuration.GetConnectionString("StudyMentorDB");

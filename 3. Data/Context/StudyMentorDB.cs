@@ -13,7 +13,7 @@ public class StudyMentorDB : DbContext
     public StudyMentorDB(DbContextOptions<StudyMentorDB> options) : base(options){}
     
     public DbSet<Payment> Payments { get; set; }
-    // db set reviews
+    public DbSet<Review> Reviews { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
