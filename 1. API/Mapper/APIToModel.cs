@@ -12,5 +12,6 @@ public class APIToModel: Profile
         CreateMap<StudentRequest, Student>();
         CreateMap<TutorRequest, Tutor>();
         CreateMap<ReviewRequest, Review>();
+        CreateMap<ScoreRequest, Score>();
     }
 }
