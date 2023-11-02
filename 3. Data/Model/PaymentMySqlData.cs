@@ -1,5 +1,6 @@
 using _3._Data.Context;
 using _3._Data.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace _3._Data;
 
@@ -13,16 +14,33 @@ public class PaymentMySqlData: IPaymentData
     }
     public Payment GetById(int id)
     {
-        return _studyMentorDb.Payments.Where(t => t.Id == id).First();
+        // DB-TABLA-
+        return _studyMentorDb.Payments.Where(t => t.Id == id && t.IsActive).First();
     }
 
-    public List<Payment> GetAll()
+    public async Task<List<Payment>> GetAllAsync()
     {
-        return _studyMentorDb.Payments.ToList();
+        return await _studyMentorDb.Payments.Where(t=>t.IsActive).ToListAsync();
     }
 
-    public bool Create(string cardNumber, string expirationDate, int cvv, string owner)
+    public Payment GetByCardNumber(string cardNumber)
     {
-        throw new NotImplementedException();
+        return _studyMentorDb.Payments.Where(t => t.CardNumber==cardNumber && t.IsActive).FirstOrDefault();
+    }
+
+    public bool Create(Payment payment)
+    {
+        try
+        {
+            _studyMentorDb.Payments.Add(payment);
+            //OBLIGATARIO
+            _studyMentorDb.SaveChanges();
+            return true;
+        }
+        catch (Exception error)
+        {
+            //log
+            return false;
+        }
     }
 }

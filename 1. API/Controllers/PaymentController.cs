@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _1._API.Request;
+using _1._API.Response;
+using _2._Domain;
+using _3._Data;
+using _3._Data.Model;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,24 +17,44 @@ namespace _1._API.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
+        private IPaymentDomain _paymentDomain;
+        private IPaymentData _paymentData;
+        
+        //automapper
+        private IMapper _mapper;
+
+        public PaymentController(IPaymentDomain paymentDomain, IPaymentData paymentData, IMapper mapper)
+        {
+            _paymentDomain = paymentDomain;
+            _paymentData = paymentData;
+            _mapper = mapper;
+        }
         // GET: api/Payment
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<List<PaymentResponse>> GetAsync()
         {
-            return new string[] { "value1", "value2" };
+            var payments = await _paymentData.GetAllAsync();
+            var paymentResponses = _mapper.Map<List<Payment>, List<PaymentResponse>>(payments);
+            return paymentResponses;
         }
 
         // GET: api/Payment/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetPayment")]
+        public Payment Get(int id)
         {
-            return "value";
+            return _paymentData.GetById(id);
         }
 
         // POST: api/Payment
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] PaymentRequest request)
         {
+            if (ModelState.IsValid)
+            {
+                var payment = _mapper.Map<PaymentRequest, Payment>(request);
+                return Ok(_paymentDomain.Create(payment));
+            }
+            else return BadRequest();
         }
 
         // PUT: api/Payment/5

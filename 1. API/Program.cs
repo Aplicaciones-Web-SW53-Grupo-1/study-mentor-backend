@@ -1,3 +1,4 @@
+using _1._API.Mapper;
 using _2._Domain;
 using _3._Data;
 using _3._Data.Context;
@@ -29,6 +30,11 @@ builder.Services.AddDbContext<StudyMentorDB>(
         );
     });
 
+//Automapper
+builder.Services.AddAutoMapper(
+    typeof(ModelToAPI),
+    typeof(APIToModel)
+);
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())

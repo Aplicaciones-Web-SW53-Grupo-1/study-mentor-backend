@@ -1,4 +1,5 @@
 using _3._Data;
+using _3._Data.Model;
 
 namespace _2._Domain;
 
@@ -10,8 +11,10 @@ public class PaymentDomain: IPaymentDomain
     {
         _paymentData = paymentData;
     }
-    public bool Create(string cardNumber, string expirationDate, int cvv, string owner)
+    public bool Create(Payment payment)
     {
-        return _paymentData.Create(cardNumber, expirationDate, cvv, owner);
+        var creditCard = _paymentData.GetByCardNumber(payment.CardNumber);
+        if (creditCard == null) return _paymentData.Create(payment);
+        return false;
     }
 }
