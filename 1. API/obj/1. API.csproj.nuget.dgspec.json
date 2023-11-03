@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\1. API\\1. API.csproj": {}
+    "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\1. API\\1. API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\1. API\\1. API.csproj": {
+    "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\1. API\\1. API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\1. API\\1. API.csproj",
+        "projectUniqueName": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\1. API\\1. API.csproj",
         "projectName": "1. API",
-        "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\1. API\\1. API.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\1. API\\obj\\",
+        "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\1. API\\1. API.csproj",
+        "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\1. API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj": {
-                "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj"
+              "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\2. Domain.csproj": {
+                "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\2. Domain.csproj"
               },
-              "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj": {
-                "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj"
+              "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj": {
+                "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj"
               }
             }
           }
@@ -95,21 +100,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj": {
+    "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\2. Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
+        "projectUniqueName": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
         "projectName": "2. Domain",
-        "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\obj\\",
+        "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
+        "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\2. Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,8 +132,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj": {
-                "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj"
+              "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj": {
+                "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj"
               }
             }
           }
@@ -154,21 +163,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj": {
+    "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj",
+        "projectUniqueName": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj",
         "projectName": "3. Data",
-        "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\obj\\",
+        "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj",
+        "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -227,7 +240,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

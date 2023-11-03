@@ -19,13 +19,15 @@ public class StudyMentorDB : DbContext
     public DbSet<Review> Reviews { get; set; }
     public DbSet<Score> Scores { get; set; }
     // db set reviews
+    
+    public DbSet<Schedule> Schedules { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=1234;Database=StudyMentorDB;", serverVersion);
+            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=141592;Database=StudyMentorDB;", serverVersion);
         }
     }
 
@@ -51,6 +53,11 @@ public class StudyMentorDB : DbContext
         builder.Entity<Review>().Property(p => p.Rating).IsRequired().HasPrecision(5);
         builder.Entity<Review>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
         builder.Entity<Review>().Property(p => p.IsActive).HasDefaultValue(true);
+        
+        // Schedule
+        builder.Entity<Schedule>().ToTable("Schedule");
+        builder.Entity<Schedule>().HasKey(s => s.Id);
+        builder.Entity<Schedule>().Property(s => s.Description).IsRequired().HasPrecision(16);
         
         //Students
         builder.Entity<Student>().ToTable("Student");
@@ -92,5 +99,6 @@ public class StudyMentorDB : DbContext
         // obligatorio
         builder.Entity<Score>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
         builder.Entity<Score>().Property(p => p.IsActive).HasDefaultValue(true);
+
     }
 }
