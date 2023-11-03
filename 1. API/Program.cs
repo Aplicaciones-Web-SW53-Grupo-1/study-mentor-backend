@@ -16,6 +16,12 @@ builder.Services.AddSwaggerGen();
 //Inyeccion dependencias
 builder.Services.AddScoped<IPaymentData, PaymentMySqlData>();
 builder.Services.AddScoped<IPaymentDomain, PaymentDomain>();
+builder.Services.AddScoped<IStudentData, StudentSQLData>();
+builder.Services.AddScoped<IStudentDomain, StudentDomain>();
+builder.Services.AddScoped<ITutorData, TutorSQLData>();
+builder.Services.AddScoped<ITutorDomain, TutorDomain>();
+builder.Services.AddScoped<IScoreData, ScoreMySqlData>();
+builder.Services.AddScoped<IScoreDomain, ScoreDomain>();
 
 builder.Services.AddScoped<IScheduleData, ScheduleSQLData>();
 builder.Services.AddScoped<IScheduleDomain, ScheduleDomain>();

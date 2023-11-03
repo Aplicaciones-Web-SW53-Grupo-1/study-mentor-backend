@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _1._API.Request;
+using _1._API.Response;
+using _2._Domain;
+using _3._Data;
+using _3._Data.Model;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,36 +17,81 @@ namespace _1._API.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
+        private IStudentData _studentData;
+        private IStudentDomain _studentDomain;
+        private IMapper _mapper;
+
+        public StudentController(IStudentData studentData, IStudentDomain studentDomain, IMapper mapper)
+        {
+            _studentData = studentData;
+            _studentDomain = studentDomain;
+            _mapper = mapper;
+        }
+        
         // GET: api/Student
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<List<StudentResponse>> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            var students = await _studentData.GetAll();
+            var studentResponses = _mapper.Map<List<Student>, List<StudentResponse>>(students);
+            return studentResponses;
         }
-
+        
+        
         // GET: api/Student/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetById")]
+        public Student GetById(int id)
         {
-            return "value";
+            return _studentData.GetById(id);
         }
+        
+
 
         // POST: api/Student
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] StudentRequest request)
         {
+            
+            if (ModelState.IsValid)
+            {
+                var student = _mapper.Map<StudentRequest, Student>(request);
+                return Ok(_studentData.Create(student));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         // PUT: api/Student/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public bool Put(int id, [FromBody] StudentRequest request)
         {
+            Student student = new Student()
+            {
+                Name = request.Name,
+                Lastname = request.Lastname,
+                Email = request.Email,
+                Password = request.Password,
+                Birthday = request.Birthday,
+                Cellphone = request.Cellphone,
+                Genre = new Genres
+                {
+                    NameGenre = request.Genre.NameGenre,
+                    Code = request.Genre.Code
+                },
+                Image = request.Image,
+            };
+            
+            return _studentData.Update(student, id);
+            
         }
 
         // DELETE: api/Student/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return _studentDomain.Delete(id);
         }
     }
 }
