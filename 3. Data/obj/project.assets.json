@@ -808,24 +808,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ramos\\.nuget\\packages\\": {}
+    "C:\\Users\\migue\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\3. Data\\3. Data.csproj",
+      "projectUniqueName": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj",
       "projectName": "3. Data",
-      "projectPath": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\3. Data\\3. Data.csproj",
-      "packagesPath": "C:\\Users\\ramos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ramos\\RiderProjects\\study-mentor\\3. Data\\obj\\",
+      "projectPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\3. Data.csproj",
+      "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\migue\\Desktop\\backendWeb\\study-mentor-backend\\3. Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ramos\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -877,7 +884,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

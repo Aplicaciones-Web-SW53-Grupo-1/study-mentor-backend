@@ -14,13 +14,15 @@ public class StudyMentorDB : DbContext
     
     public DbSet<Payment> Payments { get; set; }
     // db set reviews
+    
+    public DbSet<Schedule> Schedules { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=root;Database=StudyMentorDB;", serverVersion);
+            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=141592;Database=StudyMentorDB;", serverVersion);
         }
     }
 
@@ -41,6 +43,9 @@ public class StudyMentorDB : DbContext
         
         //REVIEWS
         
-        
+        // Schedule
+        builder.Entity<Schedule>().ToTable("Schedule");
+        builder.Entity<Schedule>().HasKey(s => s.Id);
+        builder.Entity<Schedule>().Property(s => s.Description).IsRequired().HasPrecision(16);
     }
 }
