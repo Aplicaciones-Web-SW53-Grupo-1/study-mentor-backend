@@ -14,36 +14,79 @@ public class ScoreMySqlData: IScoreData
     }
     public Score GetById(int id)
     {
-        // DB-TABLA-
-        return _studyMentorDb.Scores.Where(t => t.Id == id && t.IsActive).First();
+        
+        return _studyMentorDb.Scores.Where(t => t.Id == id ).First();
+    }
+    public async Task<List<Score>> GetByStudentId(int studentId)
+    {
+        return await _studyMentorDb.Scores.Where(t => t.StudentId==studentId).ToListAsync();
     }
 
     public async Task<List<Score>> GetAllAsync()
     {
-        return await _studyMentorDb.Scores.Where(t=>t.IsActive).ToListAsync();
+        
+        return await _studyMentorDb.Scores.ToListAsync();
     }
 
-    public List<Score> GetByIdStudent(int studentId)
-    {
-        return _studyMentorDb.Scores.Where(t => t.StudentId == studentId && t.IsActive).ToList();
-    }
+    
 
-    public List<Score> GetByIdTutor(int tutorId)
+    public bool Update(Score score, int id)
     {
-        return _studyMentorDb.Scores.Where(t => t.TutorId == tutorId && t.IsActive).ToList();
+        try
+        {
+            var scoreToUpdate = _studyMentorDb.Scores.FirstOrDefault(s => s.Id == id);
+        
+            if (scoreToUpdate != null)
+            {
+                scoreToUpdate.Type = score.Type;
+                scoreToUpdate.Date = score.Date;
+                scoreToUpdate.ScoreValue = score.ScoreValue;
+                scoreToUpdate.Status = score.Status;
+
+                _studyMentorDb.Scores.Update(scoreToUpdate);
+                _studyMentorDb.SaveChanges();
+            
+                return true;
+            }
+            else
+            {
+                
+                return false;
+            }
+        }
+        catch (Exception error)
+        {
+            
+            return false;
+        }
     }
     public bool Create(Score score)
     {
         try
         {
             _studyMentorDb.Scores.Add(score);
-      
             _studyMentorDb.SaveChanges();
             return true;
         }
         catch (Exception error)
         {
-            //log
+            
+            return false;
+        }
+    }
+    public bool Delete(int id)
+    {
+        try
+        {
+            var scoreToUpdate = _studyMentorDb.Scores.Where(s => s.Id == id).First();
+   
+            _studyMentorDb.Scores.Remove(scoreToUpdate);
+            _studyMentorDb.SaveChanges();
+                
+            return true;
+        }
+        catch (Exception error)
+        {
             return false;
         }
     }

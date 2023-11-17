@@ -6,7 +6,9 @@ public interface IScoreData
 { 
    
     Task<List<Score>> GetAllAsync();
-    List<Score> GetByIdStudent(int studentId);
-    List<Score> GetByIdTutor(int tutorId);
+    Score GetById(int id);
+    Task<List<Score>> GetByStudentId(int studentId);
+    bool Update(Score score, int id);
     bool Create(Score score);
+    bool Delete(int id);
 }
