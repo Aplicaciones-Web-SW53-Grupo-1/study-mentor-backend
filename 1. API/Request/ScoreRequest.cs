@@ -12,11 +12,12 @@ namespace _1._API.Request
         
         public DateTime Date { get; set; }
 
-        [Required(ErrorMessage = "Score is required.")]
+        
         [RegularExpression(@"^\d+/\d+$", ErrorMessage = "Invalid score format. Use X/Y format.")]
         public string ScoreValue { get; set; }
 
         [Required(ErrorMessage = "Status is required.")]
+        [EnumDataType(typeof(ScoreStatus), ErrorMessage = "Invalid status.")]
         public string Status { get; set; }
 
         [Required(ErrorMessage = "StudentId is required.")]
@@ -27,6 +28,11 @@ namespace _1._API.Request
     }
 
    
-
+    public enum ScoreStatus
+    {
+        NOTSUBMITTED,
+        SUBMITTED,
+        GRADED
+    }
    
 }
