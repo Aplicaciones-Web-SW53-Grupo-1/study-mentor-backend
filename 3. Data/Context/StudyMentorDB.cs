@@ -86,19 +86,16 @@ public class StudyMentorDB : DbContext
         builder.Entity<Tutor>().Property(q => q.Specialty).IsRequired().HasMaxLength(45);
         builder.Entity<Tutor>().Property(q => q.Cost).IsRequired();
         builder.Entity<Tutor>().Property(q => q.Image).IsRequired().HasMaxLength(248);
-        //Score
-        // nombrar tablas
+        
+        //Scores
         builder.Entity<Score>().ToTable("Score");
-        // has key definir llave primaria
+
         builder.Entity<Score>().HasKey(p => p.Id);
-        // definir campos requeridos
+
         builder.Entity<Score>().Property(p => p.Type).IsRequired();
-        builder.Entity<Score>().Property(p => p.Date).IsRequired();
-        builder.Entity<Score>().Property(p => p.Result).IsRequired();
+        builder.Entity<Score>().Property(p => p.Date).IsRequired().HasColumnType("date");
+        builder.Entity<Score>().Property(p => p.ScoreValue).IsRequired().HasMaxLength(5); 
         builder.Entity<Score>().Property(p => p.Status).IsRequired();
-        // obligatorio
-        builder.Entity<Score>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
-        builder.Entity<Score>().Property(p => p.IsActive).HasDefaultValue(true);
 
     }
 }

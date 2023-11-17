@@ -14,73 +14,89 @@ using Microsoft.AspNetCore.Mvc;
 namespace _1._API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
     public class ScoreController : ControllerBase
     {
         private IScoreDomain _scoreDomain;
         private IScoreData _scoreData;
         private IMapper _mapper;
-
-        public ScoreController(IScoreDomain scoreDomain, IScoreData scoreData, IMapper mapper)
+        
+        public ScoreController(IScoreDomain scoreDomain, IScoreData scoreData, IStudentData studentData, ITutorData tutorData, IMapper mapper)
         {
             _scoreDomain = scoreDomain;
             _scoreData = scoreData;
             _mapper = mapper;
+          
         }
 
         // GET: api/Score
         [HttpGet]
-        public async Task<List<ScoreResponse>> GetAsync()
+        public async Task<List<ScoreResponse>> GetAll()
         {
             var scores = await _scoreData.GetAllAsync();
             var scoreResponses = _mapper.Map<List<Score>, List<ScoreResponse>>(scores);
             return scoreResponses;
         }
-
-        // GET: api/Score/scores/student/1
+     
+        // GET: api/Score/student/1
         [HttpGet("scores/student/{studentId}")]
-        public List<ScoreResponse> GetScoresByStudent(int studentId)
+        public async Task<List<ScoreResponse>> GetScoresByStudent(int studentId)
         {
-            var scores = _scoreData.GetByIdStudent(studentId);
+            var scores = await _scoreData.GetByStudentId(studentId);
             var scoreResponses = _mapper.Map<List<Score>, List<ScoreResponse>>(scores);
             return scoreResponses;
         }
-
-        // GET: api/Score/scores/tutor/1
-        [HttpGet("scores/tutor/{tutorId}")]
-        public List<ScoreResponse> GetScoresByTutor(int tutorId)
+        // GET: api/Score/5
+        [HttpGet("{id}", Name = "GetScore")]
+        public Score Get(int id)
         {
-            var scores = _scoreData.GetByIdTutor(tutorId);
-            var scoreResponses = _mapper.Map<List<Score>, List<ScoreResponse>>(scores);
-            return scoreResponses;
+            return _scoreData.GetById(id);
         }
-
         // POST: api/Score
         [HttpPost]
         public IActionResult Post([FromBody] ScoreRequest request)
         {
+            
             if (ModelState.IsValid)
             {
                 var score = _mapper.Map<ScoreRequest, Score>(request);
-                // Añadir lógica para establecer tutorId y studentId según tus requisitos
-                return Ok(_scoreDomain.Create(score));
+                
+                return Ok(_scoreData.Create(score));
             }
             else
             {
                 return BadRequest();
             }
         }
-
+       
+     
+      
         // PUT: api/Score/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public bool Put(int id, [FromBody] ScoreRequest request)
         {
+            Score score = new Score()
+            {
+                Type = request.Type,
+                Date = request.Date,
+                ScoreValue = request.ScoreValue,
+                Status = request.Status,
+                
+               
+            };
+            
+            return _scoreData.Update(score, id);
+            
         }
 
         // DELETE: api/Score/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return _scoreDomain.Delete(id);
         }
+       
+        
+        
     }
 }

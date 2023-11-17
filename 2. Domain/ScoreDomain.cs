@@ -6,39 +6,80 @@ namespace _2._Domain
     public class ScoreDomain : IScoreDomain
     {
         private IScoreData _scoreData;
+        private IStudentData _studentData;
+        private ITutorData _tutorData;
 
-        public ScoreDomain(IScoreData scoreData)
+        public ScoreDomain(IScoreData scoreData, IStudentData studentData, ITutorData tutorData)
         {
             _scoreData = scoreData;
+            _studentData = studentData;
+            _tutorData = tutorData;
         }
 
         public bool Create(Score score)
         {
-            if (score == null)
+            
+            if (IsScoreInvalid(score))
             {
-                // Validar si el objeto Score es nulo
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(score.Type))
+            
+            var existingStudent = _studentData.GetById(score.StudentId);
+            if (existingStudent == null)
             {
-                // Validar si el campo "Type" no está vacío o es nulo
+                Console.WriteLine($"El ID del estudiante {score.StudentId} no existe.");
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(score.Date))
+            
+            var existingTutor = _tutorData.GetById(score.TutorId);
+            if (existingTutor == null)
             {
-                // Validar si el campo "Date" no está vacío o es nulo
+                Console.WriteLine($"El ID del tutor {score.TutorId} no existe.");
                 return false;
             }
 
-            // Realiza más validaciones según tus requisitos
-            // Por ejemplo, validar el formato de la fecha y el puntaje
+            try
+            {
+                
+                Console.WriteLine($"Debug: StudentId: {score.StudentId}, TutorId: {score.TutorId}");
 
-            // Si todas las validaciones pasan, puedes llamar al método Create en la capa de datos
-            bool created = _scoreData.Create(score);
+                
+                score.StudentId = existingStudent.Id;
+                score.TutorId = existingTutor.Id;
 
-            return created;
+              
+                return _scoreData.Create(score);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear la puntuación: {ex.Message}");
+                return false;
+            }
+        }
+        private bool IsScoreInvalid(Score score)
+        {
+            return string.IsNullOrWhiteSpace(score.Type) ||
+                   score.Date == DateTime.MinValue ||
+                   string.IsNullOrWhiteSpace(score.Status) ||
+                   string.IsNullOrWhiteSpace(score.ScoreValue);
+        }
+        public bool Update(Score score, int id)
+        {
+            var userScore = _scoreData.GetById(score.Id);
+            if (userScore== null) {return _scoreData.Update(score, id);}
+            else
+            {
+                return false;
+            }
+        }
+        public bool Delete(int id)
+        {
+
+            return _scoreData.Delete(id);
+
         }
     }
+   
 }
