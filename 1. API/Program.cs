@@ -22,6 +22,8 @@ builder.Services.AddScoped<ITutorData, TutorSQLData>();
 builder.Services.AddScoped<ITutorDomain, TutorDomain>();
 builder.Services.AddScoped<IScoreData, ScoreMySqlData>();
 builder.Services.AddScoped<IScoreDomain, ScoreDomain>();
+builder.Services.AddScoped<IReviewData, ReviewMySqlData>();
+builder.Services.AddScoped<IReviewDomain, ReviewDomain>();
 
 builder.Services.AddScoped<IScheduleData, ScheduleSQLData>();
 builder.Services.AddScoped<IScheduleDomain, ScheduleDomain>();

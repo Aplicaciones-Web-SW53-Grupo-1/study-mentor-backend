@@ -1,7 +1,11 @@
-namespace _1._API.Response;
-
-public class ReviewResponse
+namespace _1._API.Response
 {
-   public string review { get; set; }
-   public int rating { get; set; }
+    public class ReviewResponse
+    {
+        public string TextMessage { get; set; }
+        public int Rating { get; set; }
+        public int StudentId { get; set; }
+        public int TutorId { get; set; }
+        public DateTime Date { get; set; }
+    }
 }

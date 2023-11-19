@@ -61,3 +61,15 @@ C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\refi
 C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
 C:\Users\Rafael\RiderProjects\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll
 >>>>>>> delevop
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.deps.json
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.dll
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\bin\Debug\net7.0\3. Data.pdb
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.AssemblyInfo.cs
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.dll
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\refint\3. Data.dll
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\3. Data.pdb
+C:\Users\Asus\Desktop\cambiosback\study-mentor-backend\3. Data\obj\Debug\net7.0\ref\3. Data.dll

@@ -6,7 +6,10 @@ public interface IReviewData
 {
     Review GetById(int id);
     Task<List<Review>> GetAllAsync();
-    Review GetByRating(int rating);
+    Task<List<Review>> GetByRating(int rating);
     bool Create(Review review);
+    bool Update(Review review, int id);
+    bool Delete(int id);
+
 }
 
