@@ -58,6 +58,9 @@ public class StudyMentorDB : DbContext
         builder.Entity<Schedule>().ToTable("Schedule");
         builder.Entity<Schedule>().HasKey(s => s.Id);
         builder.Entity<Schedule>().Property(s => s.Description).IsRequired().HasPrecision(16);
+        builder.Entity<Schedule>().Property(s => s.Title).IsRequired().HasPrecision(15);
+        builder.Entity<Schedule>().Property(s => s.IsActive).HasDefaultValue(true);
+        
         
         //Students
         builder.Entity<Student>().ToTable("Student");

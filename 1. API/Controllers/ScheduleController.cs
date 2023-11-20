@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _1._API.Request;
 using _2._Domain;
 using _3._Data;
 using _3._Data.Model;
@@ -15,22 +16,14 @@ namespace _1._API.Controllers
     public class ScheduleController : ControllerBase
     {
         private IScheduleData _scheduleData;
-
         private IScheduleDomain _scheduleDomain;
 
-        public ScheduleController(IScheduleData scheduleData)
+        public ScheduleController(IScheduleData scheduleData, IScheduleDomain scheduleDomain)
         {
             _scheduleData = scheduleData;
+            _scheduleDomain = scheduleDomain;
         }
         
-        
-        // GET: api/Schedule
-        [HttpGet ]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "asd", "ads" };
-        }
-
         // GET: api/Schedule/5
         [HttpGet("{id}", Name = "GetSchedule")]
         public string Get(int id)
@@ -40,8 +33,19 @@ namespace _1._API.Controllers
 
         // POST: api/Schedule
         [HttpPost]
-        public void Post([FromBody] string value)
+        public bool Post([FromBody] ScheduleRequest request)
         {
+            //Mapeo
+
+            Schedule schedule = new Schedule()
+            {
+                Description = request.Description,
+                Title = request.Title,
+                DateCreated = request.DateCreated,
+                StudentId = request.StudentId
+            };
+
+            return _scheduleDomain.Create(schedule);
         }
 
         // PUT: api/Schedule/5
