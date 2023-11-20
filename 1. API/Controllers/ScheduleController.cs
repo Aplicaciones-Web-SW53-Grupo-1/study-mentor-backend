@@ -31,21 +31,35 @@ namespace _1._API.Controllers
             return ("Id: " + id);
         }
 
-        // POST: api/Schedule
         [HttpPost]
-        public bool Post([FromBody] ScheduleRequest request)
+        public IActionResult Post([FromBody] ScheduleRequest request)
         {
-            //Mapeo
-
-            Schedule schedule = new Schedule()
+            try
             {
+                Schedule schedule = new Schedule()
+                {
                 Description = request.Description,
                 Title = request.Title,
                 DateCreated = request.DateCreated,
                 StudentId = request.StudentId
-            };
+                // Agrega otros campos según sea necesario
+                };
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            return _scheduleDomain.Create(schedule);
+            if (_scheduleDomain.Create(schedule))
+            {
+                return Ok();
+            }
+
+            return StatusCode(500, "Error interno del servidor");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
         }
 
         // PUT: api/Schedule/5
