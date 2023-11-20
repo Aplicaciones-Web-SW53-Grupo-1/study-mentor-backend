@@ -40,23 +40,22 @@ public class ScoreMySqlData: IScoreData
             {
                 scoreToUpdate.Type = score.Type;
                 scoreToUpdate.Date = score.Date;
-                scoreToUpdate.ScoreValue = score.ScoreValue;
                 scoreToUpdate.Status = score.Status;
+                scoreToUpdate.ScoreValue = score.ScoreValue;
+                scoreToUpdate.StudentId = score.StudentId;
+                scoreToUpdate.TutorId = score.TutorId;
 
                 _studyMentorDb.Scores.Update(scoreToUpdate);
                 _studyMentorDb.SaveChanges();
-            
                 return true;
             }
             else
             {
-                
                 return false;
             }
         }
         catch (Exception error)
         {
-            
             return false;
         }
     }
@@ -74,6 +73,7 @@ public class ScoreMySqlData: IScoreData
             return false;
         }
     }
+    
     public bool Delete(int id)
     {
         try

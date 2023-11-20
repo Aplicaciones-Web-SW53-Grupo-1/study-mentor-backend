@@ -21,7 +21,7 @@ namespace _1._API.Controllers
         private IScoreData _scoreData;
         private IMapper _mapper;
         
-        public ScoreController(IScoreDomain scoreDomain, IScoreData scoreData, IStudentData studentData, ITutorData tutorData, IMapper mapper)
+        public ScoreController(IScoreDomain scoreDomain, IScoreData scoreData, IMapper mapper)
         {
             _scoreDomain = scoreDomain;
             _scoreData = scoreData;

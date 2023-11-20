@@ -46,24 +46,32 @@ public class StudentSQLData : IStudentData
         {
             try
             {
-                var studentToUpdate = _studyMentorDb.Students.Where(s => s.Id == id).First();
-                studentToUpdate.Name = student.Name;
-                studentToUpdate.Lastname = studentToUpdate.Lastname;
-                studentToUpdate.Email = student.Email;
-                studentToUpdate.Password = student.Password;
-                studentToUpdate.Birthday = student.Birthday;
-                studentToUpdate.Cellphone = student.Cellphone;
-                studentToUpdate.Genre = new Genres
-                {
-                    NameGenre = student.Genre.NameGenre,
-                    Code = student.Genre.Code
-                };
-                studentToUpdate.Image = student.Image;
+                var studentToUpdate = _studyMentorDb.Students.Where(s => s.Id == id).FirstOrDefault();
 
-                _studyMentorDb.Students.Update(student);
-                _studyMentorDb.SaveChanges();
-                
-                return true;
+                if (studentToUpdate != null)
+                {
+                    studentToUpdate.Name = student.Name;
+                    studentToUpdate.Lastname = student.Lastname;
+                    studentToUpdate.Email = student.Email;
+                    studentToUpdate.Password = student.Password;
+                    studentToUpdate.Birthday = student.Birthday;
+                    studentToUpdate.Cellphone = student.Cellphone;
+                    studentToUpdate.Genre = new Genres
+                    {
+                        NameGenre = student.Genre.NameGenre,
+                        Code = student.Genre.Code
+                    };
+                    studentToUpdate.Image = student.Image;
+
+                    _studyMentorDb.Students.Update(studentToUpdate);  
+                    _studyMentorDb.SaveChanges();
+            
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception error)
             {
@@ -75,12 +83,19 @@ public class StudentSQLData : IStudentData
         {
             try
             {
-                var studentToUpdate = _studyMentorDb.Students.Where(s => s.Id == id).First();
-   
-                _studyMentorDb.Students.Remove(studentToUpdate);
-                _studyMentorDb.SaveChanges();
-                
-                return true;
+                var studentToUpdate = _studyMentorDb.Students.FirstOrDefault(s => s.Id == id);
+
+                if (studentToUpdate != null)
+                {
+                    _studyMentorDb.Students.Remove(studentToUpdate);
+                    _studyMentorDb.SaveChanges();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception error)
             {
