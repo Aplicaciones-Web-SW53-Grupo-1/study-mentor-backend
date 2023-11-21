@@ -58,7 +58,7 @@ public class TutorSQLData : ITutorData
                 tutorToUpdate.Cost = tutor.Cost;
                 tutorToUpdate.Image = tutor.Image;
 
-                _studyMentorDb.Tutors.Update(tutor);
+                _studyMentorDb.Tutors.Update(tutorToUpdate);
                 _studyMentorDb.SaveChanges();
             
                 return true;
