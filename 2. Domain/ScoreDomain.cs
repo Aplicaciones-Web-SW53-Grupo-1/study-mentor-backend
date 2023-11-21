@@ -48,8 +48,7 @@ namespace _2._Domain
                 
                 score.StudentId = existingStudent.Id;
                 score.TutorId = existingTutor.Id;
-
-              
+                
                 return _scoreData.Create(score);
             }
             catch (Exception ex)

@@ -826,34 +826,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rafael\\.nuget\\packages\\": {}
+    "C:\\Users\\Jonatan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
+      "projectUniqueName": "E:\\Trabajo Final\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
       "projectName": "2. Domain",
-      "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
-      "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\2. Domain\\obj\\",
+      "projectPath": "E:\\Trabajo Final\\study-mentor-backend\\2. Domain\\2. Domain.csproj",
+      "packagesPath": "C:\\Users\\Jonatan\\.nuget\\packages\\",
+      "outputPath": "E:\\Trabajo Final\\study-mentor-backend\\2. Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Jonatan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj": {
-              "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj"
+            "E:\\Trabajo Final\\study-mentor-backend\\3. Data\\3. Data.csproj": {
+              "projectPath": "E:\\Trabajo Final\\study-mentor-backend\\3. Data\\3. Data.csproj"
             }
           }
         }

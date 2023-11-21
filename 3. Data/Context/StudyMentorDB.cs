@@ -27,7 +27,7 @@ public class StudyMentorDB : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
-            optionsBuilder.UseMySql("Server=127.0.0.1,3306;Uid=root;Pwd=141592;Database=StudyMentorDB;", serverVersion);
+            optionsBuilder.UseMySql("Server=sql10.freemysqlhosting.net,3306;Uid=sql10663775;Pwd=xHa8RELc7L;Database=sql10663775;", serverVersion);
         }
     }
 
@@ -49,15 +49,19 @@ public class StudyMentorDB : DbContext
         //REVIEWS
         builder.Entity<Review>().ToTable("Review");
         builder.Entity<Review>().HasKey(p => p.Id);
-        builder.Entity<Review>().Property(p => p.review).IsRequired().HasPrecision(200);
+        builder.Entity<Review>().Property(p => p.TextMessagge).IsRequired().HasPrecision(200);
         builder.Entity<Review>().Property(p => p.Rating).IsRequired().HasPrecision(5);
         builder.Entity<Review>().Property(p => p.DateCreated).HasDefaultValue(DateTime.Now);
         builder.Entity<Review>().Property(p => p.IsActive).HasDefaultValue(true);
         
         // Schedule
         builder.Entity<Schedule>().ToTable("Schedule");
-        builder.Entity<Schedule>().HasKey(s => s.Id);
-        builder.Entity<Schedule>().Property(s => s.Description).IsRequired().HasPrecision(16);
+        builder.Entity<Schedule>().HasKey(p => p.Id);
+        builder.Entity<Schedule>().Property(c => c.TutorName).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(q => q.Days).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(q => q.Time).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(q => q.Price).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(q => q.idTutor).IsRequired();
         
         //Students
         builder.Entity<Student>().ToTable("Student");

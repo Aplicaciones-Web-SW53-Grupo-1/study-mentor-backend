@@ -15,9 +15,8 @@ public class PaymentMySqlData: IPaymentData
     public Payment GetById(int id)
     {
         // DB-TABLA-
-        return _studyMentorDb.Payments.Where(t => t.Id == id && t.IsActive).First();
+        return _studyMentorDb.Payments.Where(t => t.StudentId == id && t.IsActive).First();
     }
-
     public async Task<List<Payment>> GetAllAsync()
     {
         return await _studyMentorDb.Payments.Where(t=>t.IsActive).ToListAsync();

@@ -808,26 +808,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rafael\\.nuget\\packages\\": {}
+    "C:\\Users\\Jonatan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj",
+      "projectUniqueName": "E:\\Trabajo Final\\study-mentor-backend\\3. Data\\3. Data.csproj",
       "projectName": "3. Data",
-      "projectPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\3. Data.csproj",
-      "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rafael\\RiderProjects\\study-mentor-backend\\3. Data\\obj\\",
+      "projectPath": "E:\\Trabajo Final\\study-mentor-backend\\3. Data\\3. Data.csproj",
+      "packagesPath": "C:\\Users\\Jonatan\\.nuget\\packages\\",
+      "outputPath": "E:\\Trabajo Final\\study-mentor-backend\\3. Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Jonatan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

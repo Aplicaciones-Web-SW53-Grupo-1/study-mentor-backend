@@ -1,7 +1,11 @@
 namespace _3._Data.Model;
 
-public class Schedule : ModelBase
+public class Schedule
 {
-    public string Description { get; set; }
-    public int StudentId { get; set; }
+    public int Id { get; set; }
+    public string TutorName { get; set; }
+    public string Days { get; set; }
+    public string Time { get; set; }
+    public string Price { get; set; }
+    public int idTutor { get; set; }
 }

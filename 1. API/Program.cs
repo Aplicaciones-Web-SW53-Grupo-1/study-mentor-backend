@@ -4,6 +4,7 @@ using _3._Data;
 using _3._Data.Context;
 using _3._Data.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "StudyMentor API",
+        Description = "API to manage data for studymentor",
+    });
+});
 //Inyeccion dependencias
 builder.Services.AddScoped<IPaymentData, PaymentMySqlData>();
 builder.Services.AddScoped<IPaymentDomain, PaymentDomain>();
@@ -22,12 +31,14 @@ builder.Services.AddScoped<ITutorData, TutorSQLData>();
 builder.Services.AddScoped<ITutorDomain, TutorDomain>();
 builder.Services.AddScoped<IScoreData, ScoreMySqlData>();
 builder.Services.AddScoped<IScoreDomain, ScoreDomain>();
+builder.Services.AddScoped<IReviewData, ReviewMySqlData>();
+builder.Services.AddScoped<IReviewDomain, ReviewDomain>();
 
 builder.Services.AddScoped<IScheduleData, ScheduleSQLData>();
 builder.Services.AddScoped<IScheduleDomain, ScheduleDomain>();
 
 //Pomelo MySql Connection
-var connectionString = builder.Configuration.GetConnectionString("StudyMentorDB");
+var connectionString = builder.Configuration.GetConnectionString("sql10663775");
 builder.Services.AddDbContext<StudyMentorDB>(
     dbContextOptions =>
     {
