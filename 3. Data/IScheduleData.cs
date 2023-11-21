@@ -4,9 +4,10 @@ namespace _3._Data;
 
 public interface IScheduleData
 {
-    string GetById(int id);
-
-    Schedule GetByTitle(string title);
+    Schedule GetById(int id);
+    Task<List<Schedule>> GetAll();
+    Schedule GetByTutor(int tutorId);
 
     bool Create(Schedule schedule);
+    bool Delete(int id);
 }
