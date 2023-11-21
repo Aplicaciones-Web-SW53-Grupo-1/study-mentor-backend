@@ -13,5 +13,6 @@ public class APIToModel: Profile
         CreateMap<TutorRequest, Tutor>();
         CreateMap<ReviewRequest, Review>();
         CreateMap<ScoreRequest, Score>();
+        CreateMap<ScheduleRequest, Schedule>();
     }
 }

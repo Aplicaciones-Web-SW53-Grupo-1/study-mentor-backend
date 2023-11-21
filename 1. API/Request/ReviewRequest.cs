@@ -5,7 +5,7 @@ namespace _1._API.Request
     public class ReviewRequest
     {
         [Required(ErrorMessage = "El campo TextMessage es obligatorio")]
-        public string TextMessage { get; set; }
+        public string TextMessagge { get; set; }
 
         [Required(ErrorMessage = "El campo Rating es obligatorio")]
         [Range(1, 5, ErrorMessage = "El rating debe estar entre 1 y 5")]
