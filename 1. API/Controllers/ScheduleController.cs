@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _1._API.Request;
+using _1._API.Response;
 using _2._Domain;
 using _3._Data;
 using _3._Data.Model;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,61 +19,61 @@ namespace _1._API.Controllers
     {
         private IScheduleData _scheduleData;
         private IScheduleDomain _scheduleDomain;
+        private IMapper _mapper;
 
-        public ScheduleController(IScheduleData scheduleData, IScheduleDomain scheduleDomain)
+        public ScheduleController(IScheduleData scheduleData, IScheduleDomain scheduleDomain, IMapper mapper)
         {
             _scheduleData = scheduleData;
             _scheduleDomain = scheduleDomain;
+            _mapper = mapper;
         }
         
-        // GET: api/Schedule/5
-        [HttpGet("{id}", Name = "GetSchedule")]
-        public string Get(int id)
+        // GET: api/Schedule
+        [HttpGet]
+        public async Task<List<ScheduleResponse>> GetAllSchedules()
         {
-            return ("Id: " + id);
+            var schedules = await _scheduleData.GetAll();
+            var scheduleResponses = _mapper.Map<List<Schedule>, List<ScheduleResponse>>(schedules);
+            return scheduleResponses;
         }
 
+        // GET: api/Schedule/id
+        [HttpGet("{id}", Name = "GetScheduleById")]
+        public Schedule GetById(int id)
+        {
+            return _scheduleData.GetById(id);
+        }
+
+        // POST: api/Schedule
         [HttpPost]
         public IActionResult Post([FromBody] ScheduleRequest request)
         {
-            try
+            if (ModelState.IsValid)
             {
-                Schedule schedule = new Schedule()
-                {
-                Description = request.Description,
-                Title = request.Title,
-                DateCreated = request.DateCreated,
-                StudentId = request.StudentId
-                // Agrega otros campos según sea necesario
-                };
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
+                var schedule = _mapper.Map<ScheduleRequest, Schedule>(request);
+                return Ok(_scheduleData.Create(schedule));
             }
-
-            if (_scheduleDomain.Create(schedule))
+            else
             {
-                return Ok();
-            }
-
-            return StatusCode(500, "Error interno del servidor");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return BadRequest();
             }
         }
 
-        // PUT: api/Schedule/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE: api/Schedule/5
+        // DELETE: api/Schedule/id
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var result = _scheduleDomain.Delete(id);
+
+            if (result)
+            {
+                return Ok(new { Message = "Schedule deleted successfully." });
+            }
+            else
+            {
+                return NotFound(new { Message = "Schedule not found." });
+            }
         }
     }
 }

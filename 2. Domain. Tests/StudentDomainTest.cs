@@ -6,7 +6,7 @@ namespace _2._Domain._Tests;
 
 public class StudentDomainTest
 {
-    [Theory]
+        [Theory]
         [InlineData("Juan", "Perez", "juan.perez@gmail.com", "password123", "1990-01-01", "123456789")]
         public void Create_ValidStudent_ReturnsTrue(
             string name, string lastName, string email, string password, string birthday, string cellphone)
@@ -38,7 +38,6 @@ public class StudentDomainTest
         [Theory]
         [InlineData("", "Perez", "juan.perez@gmail.com", "password123", "1990-01-01", "123456789")]
         [InlineData("Juan", "", "juan.perez@gmail.com", "password123", "1990-01-01", "123456789")]
-        // Add more invalid test cases as needed
         public void Create_InvalidStudent_ReturnsFalse(
             string name, string lastName, string email, string password, string birthday, string cellphone)
         {
@@ -125,7 +124,7 @@ public class StudentDomainTest
             };
 
             var studentDataMock = Substitute.For<IStudentData>();
-            studentDataMock.GetByEmail(student.Email).Returns(new Student()); // Simulate an existing student
+            studentDataMock.GetByEmail(student.Email).Returns(new Student()); 
             var studentDomain = new StudentDomain(studentDataMock);
 
             // Act

@@ -1,6 +1,6 @@
-namespace _3._Data.Model;
+namespace _1._API.Response;
 
-public class Schedule
+public class ScheduleResponse
 {
     public int Id { get; set; }
     public string TutorName { get; set; }
