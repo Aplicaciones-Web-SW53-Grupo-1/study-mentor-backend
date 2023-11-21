@@ -7,5 +7,5 @@ public class ScheduleResponse
     public string Days { get; set; }
     public string Time { get; set; }
     public string Price { get; set; }
-    public int idTutor { get; set; }
+    public int tutorId { get; set; }
 }

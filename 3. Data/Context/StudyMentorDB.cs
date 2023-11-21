@@ -56,12 +56,12 @@ public class StudyMentorDB : DbContext
         
         // Schedule
         builder.Entity<Schedule>().ToTable("Schedule");
-        builder.Entity<Schedule>().HasKey(p => p.Id);
-        builder.Entity<Schedule>().Property(c => c.TutorName).IsRequired().HasMaxLength(45);
-        builder.Entity<Schedule>().Property(q => q.Days).IsRequired().HasMaxLength(45);
-        builder.Entity<Schedule>().Property(q => q.Time).IsRequired().HasMaxLength(45);
-        builder.Entity<Schedule>().Property(q => q.Price).IsRequired().HasMaxLength(45);
-        builder.Entity<Schedule>().Property(q => q.idTutor).IsRequired();
+        builder.Entity<Schedule>().HasKey(s => s.Id);
+        builder.Entity<Schedule>().Property(s => s.TutorName).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(s => s.Days).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(s => s.Time).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(s => s.Price).IsRequired().HasMaxLength(45);
+        builder.Entity<Schedule>().Property(s => s.idTutor).IsRequired();
         
         //Students
         builder.Entity<Student>().ToTable("Student");

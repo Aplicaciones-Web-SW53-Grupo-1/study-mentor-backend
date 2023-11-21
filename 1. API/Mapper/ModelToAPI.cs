@@ -19,5 +19,7 @@ public class ModelToAPI: Profile
         CreateMap<Review, ReviewRequest>();
         CreateMap<Score, ScoreRequest>();
         CreateMap<Score, ScoreResponse>();
+        CreateMap<Schedule, ScheduleRequest>();
+        CreateMap<Schedule, ScheduleResponse>();
     }
 }
